@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+      <modules>
+        <Yli_Recommend>
+          <version>0.1.0</version>
+        </Yli_Recommend>
+      </modules>
+      <global>
+         <blocks>
+              <recommend>
+                <class>Yli_Recommend_Block</class>
+              </recommend> 
+          </blocks>
+          <helpers>
+            <recommend>
+              <class>Yli_Recommend_Helper</class>
+            </recommend>
+          </helpers>
+          <models>
+             <recommend>
+                <class>Yli_Recommend_Model</class>
+             </recommend>
+          </models>
+          <events>
+            <sales_model_service_quote_submit_success>
+                <observers>
+                    <init_customer_product>
+                        <class>recommend/observer</class>
+                        <method>initCustomerProduct</method>
+                    </init_customer_product>
+                </observers>
+            </sales_model_service_quote_submit_success>
+          </events>
+      </global>
+</config>
