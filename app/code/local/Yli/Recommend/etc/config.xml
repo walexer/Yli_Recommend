@@ -40,4 +40,16 @@
             </catalog_controller_product_view>
           </events>
       </global>
+      <crontab>
+        <jobs>
+            <init_related>
+                <schedule>
+                    <cron_expr>*/20 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>recommend/related::init</model>
+                </run>
+            </init_related>
+        </jobs>
+    </crontab>
 </config>

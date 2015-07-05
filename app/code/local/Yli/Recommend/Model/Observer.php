@@ -28,7 +28,7 @@ class Yli_Recommend_Model_Observer
     	$customer_id = Mage::getSingleton('customer/session')->getCustomerId();
     	
     	if($customer_id){
-    		$redis = Mage::helper('redis')->init(4);
+    		$redis = Mage::helper('redis')->init(3);
     		
     		//商品集合
     		$redis->sAdd('product_view'.$product_id,$customer_id);
